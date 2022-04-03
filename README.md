@@ -1,5 +1,7 @@
 # VideoAndAudioSplitBySound
 Splitting audio or video by finding a specific sound instances
+This is very usefull for videotaped experiments with different parts to analyze,
+just insert a seperation sound for your choice before and after the critical parts.
 
 There are currently two stages to the process - 
 

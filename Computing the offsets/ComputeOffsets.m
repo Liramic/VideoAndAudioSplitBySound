@@ -1,4 +1,4 @@
-function offsets = ComputeOffsets(introSignalFileName, longerSignalFileName, minimalDistanceInSeconds)
+function offsets = ComputeOffsets(introSignalFileName, longerSignalFileName, minimalDistanceInSeconds, sensitivity)
     % this function takes 2 audios, one short and one longer, and finds the
     % instances of the shorter inside the longer. minimalDistanceInSeconds
     % - is the distance betweeen the nearest instances of the shorter
@@ -44,7 +44,7 @@ function offsets = ComputeOffsets(introSignalFileName, longerSignalFileName, min
     
     %returning the peaks location in the array which are numel(y2) offseted with the
     %places where the shorter signal was found in the longer signal.
-    minimalPeakHeight = max(r)/3;
+    minimalPeakHeight = max(r)/sensitivity;
     minimialPeakProminaence = 0;%max(r);
     minSpaceBetweenIntros = minimalDistanceInSeconds*commonFs;
 

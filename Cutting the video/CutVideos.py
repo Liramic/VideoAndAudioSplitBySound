@@ -3,18 +3,19 @@ import pydub # pip install pydub
 import os
 
 
-working_directory = r".";
+working_directory = r"C:\Liron\DataEmg\ForYael";
 # this folder should includ the SeperatorSound.mp3 file as well.
 
 os.chdir(working_directory);
 
 introSound = pydub.AudioSegment.from_file("IntroSound.mp3");
-lenOfIntroSoundInSeconds = introSound.frame_count() / introSound.frame_rate; 
+lenOfIntroSoundInSeconds = introSound.frame_count() / introSound.frame_rate;
+lenOfIntroSoundInSeconds = 0.8*lenOfIntroSoundInSeconds
 
 def convertToSeconds(timeInMins, shouldAddIntroLength=False):
-    timeInSecs = timeInMins*60;
+    timeInSecs = timeInMins*60
     if(shouldAddIntroLength):
-        timeInSecs = timeInSecs + lenOfIntroSoundInSeconds;
+        timeInSecs = timeInSecs + lenOfIntroSoundInSeconds
     return timeInSecs
 
 def readCsv(movieFileName):

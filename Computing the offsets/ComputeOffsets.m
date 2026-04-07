@@ -38,6 +38,7 @@ function offsets = ComputeOffsets(introSignalFileName, longerSignalFileName, min
     %cross corrolation
     y1 = introSignal;   %envelope(introSignal);
     y2 = longerSignal;  %envelope(longerSignal);
+    
     y2 = y2 - movmean(y2, numel(y1));
     y1 = y1 - mean(y1);
     r = xcorr(y2,y1);
